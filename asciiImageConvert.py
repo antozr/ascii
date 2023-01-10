@@ -3,7 +3,7 @@ from PIL import Image
 
 ascii_char = '.+-$*#@'
 asciiSeptante = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
-with Image.open("David_aramis01minJpeg.jpg" ) as image:
+with Image.open("Frame3.png" ) as image:
     image = image.resize((500,500))
     
     for y in range(image.height):

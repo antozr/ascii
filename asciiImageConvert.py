@@ -3,8 +3,12 @@ from PIL import Image
 
 ascii_char = '.+-$*#@'
 asciiSeptante = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
-with Image.open("Frame 3.png" ) as image:
-    image = image.resize((500,500))
+pathImage = input('Enter your url ( the full path ):')
+heigthSizeImg = int(input('Choose the height of your image(just  number) : '))
+widthSizeImg = int(input('Choose the width of your image ( just number !!) : '))
+with Image.open(pathImage ) as image:
+    
+    image = image.resize((heigthSizeImg,widthSizeImg))
     
     for y in range(image.height):
         line = " "

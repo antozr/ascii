@@ -40,7 +40,7 @@ with Image.open(pathImageUser ) as image:
     
     print('Tu veux un rendu en fichier HTML / TXT ou les deux ? \n')
     choixFichier = input('Enter your choice HTML / TXT / BOTH : ')
-    
+    ## validator choice user and while for check the new response 
     def validatorChoiceUser():
         if choixFichier == "HTML" or choixFichier == "html" or choixFichier == "Html" or choixFichier == "TXT" or choixFichier == "txt" or choixFichier == "Txt" or choixFichier == "Both" or choixFichier == "BOTH" or choixFichier == "both":
            valueToPastCheck = True
@@ -51,7 +51,7 @@ with Image.open(pathImageUser ) as image:
             
     while validatorChoiceUser() == False:
         choixFichier = input('Enter your choice HTML / TXT / BOTH : ')
-        # valueToPastCheck = True
+        
         
     print("You have choice : "+choixFichier)
    
@@ -60,7 +60,8 @@ with Image.open(pathImageUser ) as image:
     for i in range(0, 10):
         time.sleep(0.5)
         print(".", end="\n")
-        
+    print('chargement finish . \n')
+    
 # the conditions to choice write file 
 
 

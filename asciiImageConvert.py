@@ -2,7 +2,7 @@
 from PIL import Image
 from intro import helloTxt
 from inputUser import inputToUser
-
+from functionWrite import writeFileHtml, writeFileTxt
 
 helloTxt()
 
@@ -38,19 +38,34 @@ with Image.open(pathImageUser ) as image:
     
     print('Tu veux un rendu en fichier HTML / TXT ou les deux ? \n')
     choixFichier = input('Enter your choice HTML / TXT / BOTH : ')
-    with open('imageArt.txt', 'w') as file :
-        for arrayLine in arrayAllLine:
-            file.write(arrayLine)
-            file.write('\n')
-            
-    with open('ascii.html', 'w') as file :
-        file.write('<span style="color:black; font-size:8px; font-family:\'Consolas\',\'BitstreamVeraSansMono\',\'CourierNew\',Courier,monospace; display:inline-block; white-space:pre; "> \n')
+    print("You have choice : "+choixFichier)
+    import time
+ 
+    print("Chargement", end="")
+    
+    if choixFichier == "HTML" or choixFichier =="Html" or choixFichier == "html":
+        for i in range(0, 10):
+                time.sleep(0.5)
+                print(".", end="")
+        writeFileHtml(arrayAllLineHtml)
         
-        for arrayLine in arrayAllLineHtml:
-            file.write(arrayLine) 
-            file.write('\n') 
+       
+    elif choixFichier == "TXT" or choixFichier == "txt" or choixFichier == "Txt":
+        for i in range(0, 5):
+            time.sleep(0.5)
+            print(".", end="")
+        writeFileTxt(arrayAllLine)
+       
+        
+    elif choixFichier == "BOTH" or choixFichier == "Both" or choixFichier == "both":
+        for i in range(0, 5):
+            time.sleep(0.5)
+            print(".", end="")
+        writeFileHtml(arrayAllLineHtml)
+        writeFileTxt(arrayAllLine)
+        
             
-        file.write('</span>')
+   
         
             
         

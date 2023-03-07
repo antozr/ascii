@@ -3,6 +3,8 @@ from PIL import Image
 from intro import helloTxt
 from inputUser import inputToUser
 from functionWrite import writeFileHtml, writeFileTxt
+import time
+
 
 helloTxt()
 
@@ -38,33 +40,42 @@ with Image.open(pathImageUser ) as image:
     
     print('Tu veux un rendu en fichier HTML / TXT ou les deux ? \n')
     choixFichier = input('Enter your choice HTML / TXT / BOTH : ')
-    print("You have choice : "+choixFichier)
-    import time
- 
-    print("Chargement", end="")
     
-    if choixFichier == "HTML" or choixFichier =="Html" or choixFichier == "html":
-        for i in range(0, 10):
-                time.sleep(0.5)
-                print(".", end="")
-        writeFileHtml(arrayAllLineHtml)
-        
-       
-    elif choixFichier == "TXT" or choixFichier == "txt" or choixFichier == "Txt":
-        for i in range(0, 5):
-            time.sleep(0.5)
-            print(".", end="")
-        writeFileTxt(arrayAllLine)
-       
-        
-    elif choixFichier == "BOTH" or choixFichier == "Both" or choixFichier == "both":
-        for i in range(0, 5):
-            time.sleep(0.5)
-            print(".", end="")
-        writeFileHtml(arrayAllLineHtml)
-        writeFileTxt(arrayAllLine)
-        
+    def validatorChoiceUser():
+        if choixFichier == "HTML" or choixFichier == "html" or choixFichier == "Html" or choixFichier == "TXT" or choixFichier == "txt" or choixFichier == "Txt" or choixFichier == "Both" or choixFichier == "BOTH" or choixFichier == "both":
+           valueToPastCheck = True
+           return valueToPastCheck
+        else:
+            valueToPastCheck = False
+            return valueToPastCheck
             
+    while validatorChoiceUser() == False:
+        choixFichier = input('Enter your choice HTML / TXT / BOTH : ')
+        # valueToPastCheck = True
+        
+    print("You have choice : "+choixFichier)
+   
+# chargement zone 
+    print("Chargement", end="")
+    for i in range(0, 10):
+        time.sleep(0.5)
+        print(".", end="\n")
+        
+# the conditions to choice write file 
+
+
+    if choixFichier == "HTML" or choixFichier =="Html" or choixFichier == "html": 
+        writeFileHtml(arrayAllLineHtml)
+        
+    elif choixFichier == "TXT" or choixFichier == "txt" or choixFichier == "Txt":
+        writeFileTxt(arrayAllLine)
+              
+    elif choixFichier == "BOTH" or choixFichier == "Both" or choixFichier == "both":
+        writeFileHtml(arrayAllLineHtml)
+        writeFileTxt(arrayAllLine)
+    
+           
+print('Thank\'s for use ASCII Convert Images ');
    
         
             
